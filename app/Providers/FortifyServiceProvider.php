@@ -38,6 +38,11 @@ class FortifyServiceProvider extends ServiceProvider
             $email = $request->email;
             return view('pages.reset-password-response-page', compact('token', 'email'));
         });
+
+
+        Fortify::verifyEmailView(function () {
+            return view('pages.verify-email-page');
+        });
     }
 
     /**
