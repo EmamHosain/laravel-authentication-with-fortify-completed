@@ -26,6 +26,18 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::loginView(function () {
             return view('pages.login');
         });
+        Fortify::confirmPasswordView(function () {
+            return view('pages.confirm-password');
+        });
+
+        Fortify::requestPasswordResetLinkView(function () {
+            return view('pages.reset-password-page');
+        });
+        Fortify::resetPasswordView(function (Request $request) {
+            $token = $request->token;
+            $email = $request->email;
+            return view('pages.reset-password-response-page', compact('token', 'email'));
+        });
     }
 
     /**

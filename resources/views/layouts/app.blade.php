@@ -29,6 +29,8 @@
 
                 @auth
                     <li><a href="{{ route('dashboard') }}" class="text-gray-700 hover:text-blue-500">Dashboard</a></li>
+                    <li><a href="{{ route('password.confirm') }}" class="text-gray-700 hover:text-blue-500">Account Delete</a></li>
+
                     <li>
                         <form action="{{ route('logout') }}" method="POST">
                             @csrf
