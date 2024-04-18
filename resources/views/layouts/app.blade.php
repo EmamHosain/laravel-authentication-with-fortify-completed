@@ -29,12 +29,14 @@
 
                 @auth
                     <li><a href="{{ route('dashboard') }}" class="text-gray-700 hover:text-blue-500">Dashboard</a></li>
-                    <li><a href="{{ route('password.confirm') }}" class="text-gray-700 hover:text-blue-500">Account Delete</a></li>
-
+                    <li><a href="{{ route('profile') }}" class="text-gray-700 hover:text-blue-500 inline-block  transition-opacity">
+                            <button class="btn px-4 py-2 bg-green-500 text-white hover:bg-green-400 hover:text-black"
+                                type="submit">My profile</button></a></li>
                     <li>
                         <form action="{{ route('logout') }}" method="POST">
                             @csrf
-                            <button class="btn px-4 py-2 bg-green-500 text-white hover:bg-green-400 hover:text-black" type="submit">Logout</button>
+                            <button class="btn px-4 py-2 bg-green-500 text-white hover:bg-green-400 hover:text-black"
+                                type="submit">Logout</button>
                         </form>
                     </li>
                 @endauth

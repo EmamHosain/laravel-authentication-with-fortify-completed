@@ -5,8 +5,8 @@
         <form action="{{ route('register') }}" method="POST" class="max-w-md mx-auto">
             @csrf
             <div class="mb-4">
-                <label for="username" class="block text-gray-700 font-bold mb-2">Username</label>
-                <input type="text" id="username" name="name" placeholder="Enter your username"
+                <label for="name" class="block text-gray-700 font-bold mb-2">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name"
                     class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     value="{{ old('name') }}">
                 <div>
@@ -15,6 +15,20 @@
                     @enderror
                 </div>
             </div>
+
+            <div class="mb-4">
+                <label for="username" class="block text-gray-700 font-bold mb-2">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username"
+                    class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    value="{{ old('username') }}">
+                <div>
+                    @error('username')
+                        <span class=" text-red-500">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+
+
             <div class="mb-4">
                 <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
                 <input type="email" id="email" name="email" placeholder="Enter your email"
